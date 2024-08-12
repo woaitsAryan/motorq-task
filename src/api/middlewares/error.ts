@@ -13,7 +13,6 @@ const errorHandler = (
 ): Response => {
   const status = err.status ?? 500
   logger.error(err.message)
-  console.log(err.message)
   if (status === 500) {
     err.message = 'Internal server error'
   }

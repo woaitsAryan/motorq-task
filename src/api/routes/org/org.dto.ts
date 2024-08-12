@@ -9,10 +9,10 @@ const orgCreateDto = z.object({
 })
 
 const orgPatchDto = z.object({
-  account: z.string(),
-  website: z.string(),
-  fuelReimbursementPolicy: z.string(),
-  speedLimitPolicy: z.string()
+  account: z.string().optional(),
+  website: z.string().optional(),
+  fuelReimbursementPolicy: z.string().optional(),
+  speedLimitPolicy: z.string().optional()
 })
 
 const getAllOrgParams = z.object({

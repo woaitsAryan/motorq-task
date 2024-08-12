@@ -4,6 +4,7 @@ import { Vehicle, type VehiclesType, type VehicleInfo } from '@/models/vehicles'
 import { ErrorNotFound } from '@/helpers/errors'
 import { Organization } from '@/models/organization'
 import { type ObjectId } from 'mongoose'
+import logger from '@/loaders/logger'
 
 export const VehicleService = {
   Create: async (createVehicleDto: createVehicleDtoType): Promise<VehiclesType> => {
@@ -14,6 +15,7 @@ export const VehicleService = {
     }
 
     const vinData = await fetchVinDetails(createVehicleDto.vin)
+    logger.info('Fetched vehicle details for VIN: ' + createVehicleDto.vin)
 
     const newVehicle = new Vehicle({
       carMake: vinData.carMake,

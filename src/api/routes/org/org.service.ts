@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { Organization, type OrganizationType } from '@/models/organization'
 import { type orgPatchDtoType, type orgCreateDtoType, type getAllOrgParamsType } from './org.dto'
 import { ErrorBadRequest } from '@/helpers/errors'
-// import { startSession } from 'mongoose'
+import logger from '@/loaders/logger'
+import { canPatchFuelReimbursementPolicy } from '@/helpers/db'
 
 export const OrgService = {
   Create: async (orgCreateDto: orgCreateDtoType): Promise<OrganizationType> => {
@@ -18,6 +20,7 @@ export const OrgService = {
       fuelReimbursementPolicy: orgCreateDto.fuelReimbursementPolicy,
       speedLimitPolicy: orgCreateDto.speedLimitPolicy
     })
+    logger.info('Created organization: ' + newOrganization.name)
     await newOrganization.save()
 
     return newOrganization
@@ -31,10 +34,23 @@ export const OrgService = {
     if (existingOrg == null) {
       throw new ErrorBadRequest('Organization not found')
     }
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    if (orgPatchDto.fuelReimbursementPolicy !== undefined) {
+      if (!await canPatchFuelReimbursementPolicy(existingOrg._id as any, orgPatchDto.fuelReimbursementPolicy)) {
+        throw new ErrorBadRequest('Cannot patch fuel reimbursement policy')
+      }
+      existingOrg.fuelReimbursementPolicy = orgPatchDto.fuelReimbursementPolicy
+    }
+    if (orgPatchDto.account !== undefined) {
+      existingOrg.account = orgPatchDto.account
+    }
+    if (orgPatchDto.website !== undefined) {
+      existingOrg.website = orgPatchDto.website
+    }
 
-    existingOrg.website = orgPatchDto.website
-    existingOrg.fuelReimbursementPolicy = orgPatchDto.fuelReimbursementPolicy
-    existingOrg.speedLimitPolicy = orgPatchDto.speedLimitPolicy
+    if (orgPatchDto.speedLimitPolicy !== undefined) {
+      existingOrg.speedLimitPolicy = orgPatchDto.speedLimitPolicy
+    }
 
     // await existingOrg.save({ session })
     // await session.commitTransaction()
