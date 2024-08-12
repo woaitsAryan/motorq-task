@@ -1,6 +1,7 @@
 import { Organization, type OrganizationType } from '@/models/organization'
 import { type orgPatchDtoType, type orgCreateDtoType, type getAllOrgParamsType } from './org.dto'
 import { ErrorBadRequest } from '@/helpers/errors'
+// import { startSession } from 'mongoose'
 
 export const OrgService = {
   Create: async (orgCreateDto: orgCreateDtoType): Promise<OrganizationType> => {
@@ -23,8 +24,10 @@ export const OrgService = {
   },
 
   Patch: async (orgPatchDto: orgPatchDtoType, orgId: string): Promise<OrganizationType> => {
+    // const session = await startSession()
+    // session.startTransaction()
+    // const existingOrg = await Organization.findById(orgId).session(session)
     const existingOrg = await Organization.findById(orgId)
-
     if (existingOrg == null) {
       throw new ErrorBadRequest('Organization not found')
     }
@@ -33,6 +36,9 @@ export const OrgService = {
     existingOrg.fuelReimbursementPolicy = orgPatchDto.fuelReimbursementPolicy
     existingOrg.speedLimitPolicy = orgPatchDto.speedLimitPolicy
 
+    // await existingOrg.save({ session })
+    // await session.commitTransaction()
+    // await session.endSession()
     await existingOrg.save()
     return existingOrg
   },

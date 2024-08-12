@@ -14,7 +14,10 @@ const errorHandler = (
   const status = err.status ?? 500
   logger.error(err.message)
   console.log(err.message)
-  return res.status(status).json({ error: err.message })
+  if (status === 500) {
+    err.message = 'Internal server error'
+  }
+  return res.status(status).json({ error: err.message, success: false, data: {} })
 }
 
 export default errorHandler

@@ -1,5 +1,7 @@
 import { type VehicleInfo } from '@/models/vehicles'
 import { fetchVehicleDetailsFromCache, setVehicleDetailsToCache } from './cache'
+import { ErrorBadRequest } from './errors'
+import constants from '@/config/constants'
 
 const fetchVinDetails = async (vin: string): Promise<VehicleInfo> => {
   const cachedData = await fetchVehicleDetailsFromCache(vin)
@@ -7,7 +9,7 @@ const fetchVinDetails = async (vin: string): Promise<VehicleInfo> => {
     return cachedData
   }
 
-  const response = await fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVin/${vin}?format=json`)
+  const response = await fetch(`${constants.vinUrl}/vehicles/DecodeVin/${vin}?format=json`)
   const data = await response.json()
   const parsedVehicleInfo = parseVehicleInfo(data)
 
@@ -46,6 +48,9 @@ function parseVehicleInfo (data: any): VehicleInfo {
         vehicleInfo.carMetadata[Variable] = Value
     }
   })
+  if (vehicleInfo.carMake === null || vehicleInfo.carModel === null || vehicleInfo.carModelYear === null || vehicleInfo.carManufacturer === null) {
+    throw new ErrorBadRequest('Invalid VIN')
+  }
 
   return vehicleInfo
 }

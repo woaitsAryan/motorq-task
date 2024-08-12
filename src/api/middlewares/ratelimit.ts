@@ -1,3 +1,4 @@
+import constants from '@/config/constants'
 import { redisClient } from '@/loaders/redis'
 import { type Request, type Response, type NextFunction } from 'express'
 
@@ -6,12 +7,11 @@ const rateLimit = async (_req: Request, res: Response, next: NextFunction): Prom
     const currentTime = Math.floor(Date.now() / 1000)
     const currentMinute = Math.floor(currentTime / 60)
     const key = `global:${currentMinute}`
-    const maxRequests = 20
 
     const requestCount = await redisClient.get(key)
 
-    if (requestCount != null && parseInt(requestCount, 10) >= maxRequests) {
-      res.status(429).json({ message: 'Too many requests, please try again later.', success: false })
+    if (requestCount != null && parseInt(requestCount, 10) >= constants.maxRequests) {
+      res.status(429).json({ message: 'Too many requests, please try again later.', success: false, data: {} })
       return
     }
 

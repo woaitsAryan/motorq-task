@@ -13,7 +13,7 @@ export const VehicleController = {
       }
 
       const newVehicle = await VehicleService.Create(validatedBody.data)
-      return res.json({ message: 'Vehicle successfully created!', data: newVehicle, success: true })
+      return res.json({ message: 'Vehicle successfully created!', data: newVehicle, success: true }).status(201)
     }
   ),
   FetchVehicleDetails: catchAsync(

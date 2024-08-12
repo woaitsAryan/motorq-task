@@ -13,7 +13,7 @@ export const OrgController = {
       }
 
       const newOrg = await OrgService.Create(validatedBody.data)
-      return res.json({ message: 'Organization created', success: true, data: newOrg })
+      return res.json({ message: 'Organization created', success: true, data: newOrg }).status(201)
     }
   ),
   Patch: catchAsync(

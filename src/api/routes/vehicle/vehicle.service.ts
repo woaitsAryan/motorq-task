@@ -2,10 +2,11 @@ import { fetchVinDetails } from '@/helpers/vin'
 import { type createVehicleDtoType } from './vehicle.dto'
 import { Vehicle, type VehiclesType, type VehicleInfo } from '@/models/vehicles'
 import { ErrorNotFound } from '@/helpers/errors'
+import { Organization } from '@/models/organization'
 
 export const VehicleService = {
   Create: async (createVehicleDto: createVehicleDtoType): Promise<VehiclesType> => {
-    const existingOrg = await Vehicle.findOne({ org: createVehicleDto.org })
+    const existingOrg = await Organization.findById(createVehicleDto.orgId)
 
     if (existingOrg == null) {
       throw new ErrorNotFound('Organization doesn\'t exist')
@@ -14,13 +15,13 @@ export const VehicleService = {
     const vinData = await fetchVinDetails(createVehicleDto.vin)
 
     const newVehicle = new Vehicle({
-      vin: createVehicleDto.vin,
-      org: createVehicleDto.org,
-      make: vinData.carMake,
-      model: vinData.carModel,
-      year: vinData.carModelYear,
-      manufacturer: vinData.carManufacturer,
-      metadata: vinData.carMetadata
+      carMake: vinData.carMake,
+      carModel: vinData.carModel,
+      carModelYear: vinData.carModelYear,
+      carManufacturer: vinData.carManufacturer,
+      carVin: createVehicleDto.vin,
+      carMetadata: vinData.carMetadata,
+      organization: createVehicleDto.orgId
     })
     await newVehicle.save()
     return newVehicle
@@ -30,7 +31,7 @@ export const VehicleService = {
     return vinData
   },
   FetchVehicleByVin: async (vin: string): Promise<VehiclesType> => {
-    const vehicle = await Vehicle.findOne({ vin })
+    const vehicle = await Vehicle.findOne({ carVin: vin })
     if (vehicle == null) {
       throw new ErrorNotFound('Vehicle not found')
     }
