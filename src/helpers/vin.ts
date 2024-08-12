@@ -1,9 +1,18 @@
 import { type VehicleInfo } from '@/models/vehicles'
+import { fetchVehicleDetailsFromCache, setVehicleDetailsToCache } from './cache'
 
 const fetchVinDetails = async (vin: string): Promise<VehicleInfo> => {
+  const cachedData = await fetchVehicleDetailsFromCache(vin)
+  if (cachedData != null) {
+    return cachedData
+  }
+
   const response = await fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVin/${vin}?format=json`)
   const data = await response.json()
   const parsedVehicleInfo = parseVehicleInfo(data)
+
+  await setVehicleDetailsToCache(vin, parsedVehicleInfo)
+
   return parsedVehicleInfo
 }
 

@@ -19,6 +19,7 @@ export const VehicleController = {
   FetchVehicleDetails: catchAsync(
     async (req: Request, res: Response) => {
       const { vin } = req.params
+
       const vinData = await VehicleService.FetchDetails(vin)
       return res.json({ message: 'Vehicle details fetched!', data: vinData, success: true })
     }
