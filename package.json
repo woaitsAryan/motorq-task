@@ -2,7 +2,9 @@
   "scripts": {
     "start": "bun run build/app.ts",
     "dev": "bun --watch run ./src/app.ts",
-    "build": "bun build ./src/app.ts --outdir ./build --target bun"
+    "build": "bun build ./src/app.ts --outdir ./build --target bun",
+    "seed_org": "bun scripts/seed_org.ts",
+    "seed_fuel_change": "bun scripts/fuel_change.ts"
   },
   "dependencies": {
     "cors": "^2.8.5",

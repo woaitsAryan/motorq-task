@@ -3,6 +3,7 @@ import { type createVehicleDtoType } from './vehicle.dto'
 import { Vehicle, type VehiclesType, type VehicleInfo } from '@/models/vehicles'
 import { ErrorNotFound } from '@/helpers/errors'
 import { Organization } from '@/models/organization'
+import { type ObjectId } from 'mongoose'
 
 export const VehicleService = {
   Create: async (createVehicleDto: createVehicleDtoType): Promise<VehiclesType> => {
@@ -24,6 +25,8 @@ export const VehicleService = {
       organization: createVehicleDto.orgId
     })
     await newVehicle.save()
+    existingOrg.vehicles.push(newVehicle._id as ObjectId)
+    await existingOrg.save()
     return newVehicle
   },
   FetchDetails: async (vinNumber: string): Promise<VehicleInfo> => {

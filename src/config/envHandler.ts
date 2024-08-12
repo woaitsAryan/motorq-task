@@ -12,7 +12,8 @@ const envSchema = z.object({
   JWT_KEY: z.string(),
   REDIS_HOST: z.string(),
   REDIS_PORT: z.string().transform(Number),
-  REDIS_PASSWORD: z.string()
+  REDIS_PASSWORD: z.string(),
+  API_KEY: z.string()
 })
 
 type EnvType = z.infer<typeof envSchema>

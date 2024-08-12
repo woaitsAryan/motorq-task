@@ -11,11 +11,10 @@ export default function initExpress (app: Express): Express {
   app.use(express.json())
   app.use(helmet())
   app.use(morgan('dev'))
-
-  app.use('/', routes())
   app.get('/health', (_req, res) => {
     res.status(200).end()
   })
+  app.use('/', routes())
 
   app.use(errorHandler)
 

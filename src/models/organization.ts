@@ -27,7 +27,6 @@ const OrganizationSchema: Schema = new Schema({
   vehicles: [{ type: Schema.Types.ObjectId, ref: 'Vehicle' }]
 })
 
-// Pre-save middleware to handle policy inheritance
 OrganizationSchema.pre('save', async function (next) {
   const org = this as unknown as OrganizationType
 
@@ -38,7 +37,6 @@ OrganizationSchema.pre('save', async function (next) {
         org.inheritedFuelReimbursementPolicy = parentOrg.fuelReimbursementPolicy || parentOrg.inheritedFuelReimbursementPolicy
       }
 
-      // Inherit speed limit policy only if not overridden
       if (org.speedLimitPolicy == null && (parentOrg.speedLimitPolicy != null || parentOrg.inheritedSpeedLimitPolicy !== null)) {
         org.inheritedSpeedLimitPolicy = parentOrg.speedLimitPolicy || parentOrg.inheritedSpeedLimitPolicy
       }
@@ -51,7 +49,6 @@ OrganizationSchema.pre('save', async function (next) {
 OrganizationSchema.post('save', async function () {
   const org = this as unknown as OrganizationType
 
-  // Propagate fuel reimbursement policy to children
   if (org.fuelReimbursementPolicy !== null || org.inheritedFuelReimbursementPolicy !== null) {
     await mongoose.model('Organization').updateMany(
       { parent: org._id },
