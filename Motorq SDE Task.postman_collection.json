@@ -1,0 +1,788 @@
+{
+	"info": {
+		"_postman_id": "6d35e8cd-a1f2-4b94-9fd9-bfbda8c49fda",
+		"name": "Motorq SDE Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28268592"
+	},
+	"item": [
+		{
+			"name": "Vehicle",
+			"item": [
+				{
+					"name": "Create vehicle",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"vin\": \"5UXWX7C5*BA\",\r\n    \"org\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/vehicles",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"vehicles"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"vin\": \"1C6RR6FG3ES153320\",\r\n    \"orgId\": \"66ba0837f87f525d47a76b17\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/vehicles",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"vehicles"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11aa-x8HO1vtknEnRhBfLKMqHkhzi5aU\""
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 Aug 2024 13:10:48 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4522"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Vehicle successfully created!\",\n    \"data\": {\n        \"carMake\": \"RAM\",\n        \"carModel\": \"1500\",\n        \"carModelYear\": 2014,\n        \"carManufacturer\": \"FCA US LLC\",\n        \"carVin\": \"1C6RR6FG3ES153320\",\n        \"carMetadata\": {\n            \"Suggested VIN\": \"\",\n            \"Error Code\": \"0\",\n            \"Possible Values\": \"\",\n            \"Additional Error Text\": null,\n            \"Error Text\": \"0 - VIN decoded clean. Check Digit (9th position) is correct\",\n            \"Vehicle Descriptor\": \"1C6RR6FG*ES\",\n            \"Destination Market\": null,\n            \"Plant City\": \"WARREN\",\n            \"Series\": null,\n            \"Trim\": \"ST\",\n            \"Vehicle Type\": \"TRUCK\",\n            \"Plant Country\": \"UNITED STATES (USA)\",\n            \"Plant Company Name\": \"Warren Truck Assembly\",\n            \"Plant State\": \"MICHIGAN\",\n            \"Trim2\": null,\n            \"Series2\": null,\n            \"Note\": \"Drive Type: Single Rear Wheels\",\n            \"Base Price ($)\": null,\n            \"Non-Land Use\": null,\n            \"Body Class\": \"Pickup\",\n            \"Doors\": null,\n            \"Windows\": null,\n            \"Wheel Base Type\": null,\n            \"Track Width (inches)\": null,\n            \"Gross Vehicle Weight Rating From\": \"Class 2E: 6,001 - 7,000 lb (2,722 - 3,175 kg)\",\n            \"Bed Length (inches)\": null,\n            \"Curb Weight (pounds)\": null,\n            \"Wheel Base (inches) From\": null,\n            \"Wheel Base (inches) To\": null,\n            \"Gross Combination Weight Rating From\": null,\n            \"Gross Combination Weight Rating To\": null,\n            \"Gross Vehicle Weight Rating To\": null,\n            \"Bed Type\": null,\n            \"Cab Type\": \"Extra/Super/Quad/Double/King/Extended\",\n            \"Trailer Type Connection\": \"Not Applicable\",\n            \"Trailer Body Type\": \"Not Applicable\",\n            \"Trailer Length (feet)\": null,\n            \"Other Trailer Info\": null,\n            \"Number of Wheels\": null,\n            \"Wheel Size Front (inches)\": null,\n            \"Wheel Size Rear (inches)\": null,\n            \"Entertainment System\": null,\n            \"Steering Location\": \"Left-Hand Drive (LHD)\",\n            \"Number of Seats\": null,\n            \"Number of Seat Rows\": null,\n            \"Transmission Style\": null,\n            \"Transmission Speeds\": null,\n            \"Drive Type\": \"4x2\",\n            \"Axles\": null,\n            \"Axle Configuration\": null,\n            \"Brake System Type\": \"Hydraulic\",\n            \"Brake System Description\": null,\n            \"Other Battery Info\": null,\n            \"Battery Type\": null,\n            \"Number of Battery Cells per Module\": null,\n            \"Battery Current (Amps) From\": null,\n            \"Battery Voltage (Volts) From\": null,\n            \"Battery Energy (kWh) From\": null,\n            \"EV Drive Unit\": null,\n            \"Battery Current (Amps) To\": null,\n            \"Battery Voltage (Volts) To\": null,\n            \"Battery Energy (kWh) To\": null,\n            \"Number of Battery Modules per Pack\": null,\n            \"Number of Battery Packs per Vehicle\": null,\n            \"Charger Level\": null,\n            \"Charger Power (kW)\": null,\n            \"Engine Number of Cylinders\": \"6\",\n            \"Displacement (CC)\": \"3600.0\",\n            \"Displacement (CI)\": \"219.68547874103\",\n            \"Displacement (L)\": \"3.6\",\n            \"Engine Stroke Cycles\": null,\n            \"Engine Model\": null,\n            \"Engine Power (kW)\": null,\n            \"Fuel Type - Primary\": \"Gasoline\",\n            \"Valve Train Design\": null,\n            \"Engine Configuration\": null,\n            \"Fuel Type - Secondary\": null,\n            \"Fuel Delivery / Fuel Injection Type\": null,\n            \"Engine Brake (hp) From\": null,\n            \"Cooling Type\": null,\n            \"Engine Brake (hp) To\": null,\n            \"Electrification Level\": null,\n            \"Other Engine Info\": null,\n            \"Turbo\": \"No\",\n            \"Top Speed (MPH)\": null,\n            \"Engine Manufacturer\": null,\n            \"Pretensioner\": null,\n            \"Seat Belt Type\": \"Manual\",\n            \"Other Restraint System Info\": \"Active Seat Belt\",\n            \"Curtain Air Bag Locations\": null,\n            \"Seat Cushion Air Bag Locations\": null,\n            \"Front Air Bag Locations\": \"1st Row (Driver and Passenger)\",\n            \"Knee Air Bag Locations\": null,\n            \"Side Air Bag Locations\": \"All Rows\",\n            \"Anti-lock Braking System (ABS)\": null,\n            \"Electronic Stability Control (ESC)\": null,\n            \"Traction Control\": null,\n            \"Tire Pressure Monitoring System (TPMS) Type\": \"Direct\",\n            \"Active Safety System Note\": null,\n            \"Auto-Reverse System for Windows and Sunroofs\": null,\n            \"Automatic Pedestrian Alerting Sound (for Hybrid and EV only)\": null,\n            \"Event Data Recorder (EDR)\": null,\n            \"Keyless Ignition\": null,\n            \"SAE Automation Level From\": null,\n            \"SAE Automation Level To\": null,\n            \"Adaptive Cruise Control (ACC)\": null,\n            \"Crash Imminent Braking (CIB)\": null,\n            \"Blind Spot Warning (BSW)\": null,\n            \"Forward Collision Warning (FCW)\": null,\n            \"Lane Departure Warning (LDW)\": null,\n            \"Lane Keeping Assistance (LKA)\": null,\n            \"Backup Camera\": null,\n            \"Parking Assist\": null,\n            \"Bus Length (feet)\": null,\n            \"Bus Floor Configuration Type\": \"Not Applicable\",\n            \"Bus Type\": \"Not Applicable\",\n            \"Other Bus Info\": null,\n            \"Custom Motorcycle Type\": \"Not Applicable\",\n            \"Motorcycle Suspension Type\": \"Not Applicable\",\n            \"Motorcycle Chassis Type\": \"Not Applicable\",\n            \"Other Motorcycle Info\": null,\n            \"Dynamic Brake Support (DBS)\": null,\n            \"Pedestrian Automatic Emergency Braking (PAEB)\": null,\n            \"Automatic Crash Notification (ACN) / Advanced Automatic Crash Notification (AACN)\": null,\n            \"Daytime Running Light (DRL)\": null,\n            \"Headlamp Light Source\": null,\n            \"Semiautomatic Headlamp Beam Switching\": null,\n            \"Adaptive Driving Beam (ADB)\": null,\n            \"Rear Cross Traffic Alert\": null,\n            \"Rear Automatic Emergency Braking\": null,\n            \"Blind Spot Intervention (BSI)\": null,\n            \"Lane Centering Assistance\": null\n        },\n        \"organization\": \"66ba0837f87f525d47a76b17\",\n        \"_id\": \"66ba09d87ac50fe2e624494f\"\n    },\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Decode vehicles details",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/vehicles/decode/:vin",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"vehicles",
+										"decode",
+										":vin"
+									],
+									"variable": [
+										{
+											"key": "vin",
+											"value": "5UXWX7C5*BA"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11ed-lp7g89H8X66hzpA7Nnaoh6mty+U\""
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 Aug 2024 11:35:49 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4589"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Vehicle details fetched\",\n    \"data\": {\n        \"carMake\": \"BMW\",\n        \"carModel\": \"X3\",\n        \"carModelYear\": \"2011\",\n        \"carManufacturer\": \"BMW MANUFACTURER CORPORATION / BMW NORTH AMERICA\",\n        \"carMetadata\": {\n            \"Suggested VIN\": \"\",\n            \"Error Code\": \"6\",\n            \"Possible Values\": \"\",\n            \"Additional Error Text\": null,\n            \"Error Text\": \"6 - Incomplete VIN\",\n            \"Vehicle Descriptor\": \"5UXWX7C5*BA\",\n            \"Destination Market\": null,\n            \"Plant City\": \"MUNICH\",\n            \"Series\": null,\n            \"Trim\": \"xDrive35i\",\n            \"Vehicle Type\": \"MULTIPURPOSE PASSENGER VEHICLE (MPV)\",\n            \"Plant Country\": \"GERMANY\",\n            \"Plant Company Name\": null,\n            \"Plant State\": null,\n            \"Trim2\": \"SAV\",\n            \"Series2\": null,\n            \"Note\": null,\n            \"Base Price ($)\": null,\n            \"Non-Land Use\": null,\n            \"Body Class\": \"Sport Utility Vehicle (SUV)/Multi-Purpose Vehicle (MPV)\",\n            \"Doors\": \"4\",\n            \"Windows\": null,\n            \"Wheel Base Type\": null,\n            \"Track Width (inches)\": null,\n            \"Gross Vehicle Weight Rating From\": \"Class 1D: 5,001 - 6,000 lb (2,268 - 2,722 kg)\",\n            \"Bed Length (inches)\": null,\n            \"Curb Weight (pounds)\": null,\n            \"Wheel Base (inches) From\": null,\n            \"Wheel Base (inches) To\": null,\n            \"Gross Combination Weight Rating From\": null,\n            \"Gross Combination Weight Rating To\": null,\n            \"Gross Vehicle Weight Rating To\": null,\n            \"Bed Type\": null,\n            \"Cab Type\": null,\n            \"Trailer Type Connection\": \"Not Applicable\",\n            \"Trailer Body Type\": \"Not Applicable\",\n            \"Trailer Length (feet)\": null,\n            \"Other Trailer Info\": null,\n            \"Number of Wheels\": null,\n            \"Wheel Size Front (inches)\": null,\n            \"Wheel Size Rear (inches)\": null,\n            \"Entertainment System\": null,\n            \"Steering Location\": null,\n            \"Number of Seats\": null,\n            \"Number of Seat Rows\": null,\n            \"Transmission Style\": null,\n            \"Transmission Speeds\": null,\n            \"Drive Type\": \"AWD/All-Wheel Drive\",\n            \"Axles\": null,\n            \"Axle Configuration\": null,\n            \"Brake System Type\": null,\n            \"Brake System Description\": null,\n            \"Other Battery Info\": null,\n            \"Battery Type\": null,\n            \"Number of Battery Cells per Module\": null,\n            \"Battery Current (Amps) From\": null,\n            \"Battery Voltage (Volts) From\": null,\n            \"Battery Energy (kWh) From\": null,\n            \"EV Drive Unit\": null,\n            \"Battery Current (Amps) To\": null,\n            \"Battery Voltage (Volts) To\": null,\n            \"Battery Energy (kWh) To\": null,\n            \"Number of Battery Modules per Pack\": null,\n            \"Number of Battery Packs per Vehicle\": null,\n            \"Charger Level\": null,\n            \"Charger Power (kW)\": null,\n            \"Engine Number of Cylinders\": \"6\",\n            \"Displacement (CC)\": \"2979.1682352\",\n            \"Displacement (CI)\": \"181.8\",\n            \"Displacement (L)\": \"3.0\",\n            \"Engine Stroke Cycles\": null,\n            \"Engine Model\": null,\n            \"Engine Power (kW)\": null,\n            \"Fuel Type - Primary\": \"Gasoline\",\n            \"Valve Train Design\": null,\n            \"Engine Configuration\": null,\n            \"Fuel Type - Secondary\": null,\n            \"Fuel Delivery / Fuel Injection Type\": null,\n            \"Engine Brake (hp) From\": \"300\",\n            \"Cooling Type\": null,\n            \"Engine Brake (hp) To\": null,\n            \"Electrification Level\": null,\n            \"Other Engine Info\": null,\n            \"Turbo\": null,\n            \"Top Speed (MPH)\": null,\n            \"Engine Manufacturer\": null,\n            \"Pretensioner\": \"Yes\",\n            \"Seat Belt Type\": \"Manual\",\n            \"Other Restraint System Info\": \"Head Inflatable Restraint for Driver, Front Passenger, Rear Outboard Driver-side and Rear Outboard Passenger-side.  Knee Inflatable Restraint for Driver.  Pretensioners for Driver and Front Passenger.\",\n            \"Curtain Air Bag Locations\": null,\n            \"Seat Cushion Air Bag Locations\": null,\n            \"Front Air Bag Locations\": \"1st Row (Driver and Passenger)\",\n            \"Knee Air Bag Locations\": null,\n            \"Side Air Bag Locations\": \"1st Row (Driver and Passenger)\",\n            \"Anti-lock Braking System (ABS)\": null,\n            \"Electronic Stability Control (ESC)\": null,\n            \"Traction Control\": null,\n            \"Tire Pressure Monitoring System (TPMS) Type\": \"Direct\",\n            \"Active Safety System Note\": null,\n            \"Auto-Reverse System for Windows and Sunroofs\": null,\n            \"Automatic Pedestrian Alerting Sound (for Hybrid and EV only)\": null,\n            \"Event Data Recorder (EDR)\": null,\n            \"Keyless Ignition\": null,\n            \"SAE Automation Level From\": null,\n            \"SAE Automation Level To\": null,\n            \"Adaptive Cruise Control (ACC)\": null,\n            \"Crash Imminent Braking (CIB)\": null,\n            \"Blind Spot Warning (BSW)\": null,\n            \"Forward Collision Warning (FCW)\": null,\n            \"Lane Departure Warning (LDW)\": null,\n            \"Lane Keeping Assistance (LKA)\": null,\n            \"Backup Camera\": null,\n            \"Parking Assist\": null,\n            \"Bus Length (feet)\": null,\n            \"Bus Floor Configuration Type\": \"Not Applicable\",\n            \"Bus Type\": \"Not Applicable\",\n            \"Other Bus Info\": null,\n            \"Custom Motorcycle Type\": \"Not Applicable\",\n            \"Motorcycle Suspension Type\": \"Not Applicable\",\n            \"Motorcycle Chassis Type\": \"Not Applicable\",\n            \"Other Motorcycle Info\": null,\n            \"Dynamic Brake Support (DBS)\": null,\n            \"Pedestrian Automatic Emergency Braking (PAEB)\": null,\n            \"Automatic Crash Notification (ACN) / Advanced Automatic Crash Notification (AACN)\": null,\n            \"Daytime Running Light (DRL)\": null,\n            \"Headlamp Light Source\": null,\n            \"Semiautomatic Headlamp Beam Switching\": null,\n            \"Adaptive Driving Beam (ADB)\": null,\n            \"Rear Cross Traffic Alert\": null,\n            \"Rear Automatic Emergency Braking\": null,\n            \"Blind Spot Intervention (BSI)\": null,\n            \"Lane Centering Assistance\": null\n        }\n    },\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Get vehicle",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Organization",
+			"item": [
+				{
+					"name": "Create organization",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"org1\",\r\n    \"account\": \"acc1\", \r\n    \"website\":  \"www.org1.com\",\r\n     \"fuelReimbursementPolicy\": \"200\",\r\n \"speedLimitPolicy\": \"300\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/orgs",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"orgs"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"org1\",\r\n    \"account\":\"acc2\", \r\n    \"website\":\"www.org1.com\",\r\n    \"fuelReimbursementPolicy\": \"200\",\r\n    \"speedLimitPolicy\": \"300\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/orgs",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"orgs"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"13f-5kdpL60wD792xQdKA636URWDvqY\""
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 Aug 2024 12:04:56 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "319"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Organization created\",\n    \"success\": true,\n    \"data\": {\n        \"name\": \"org1\",\n        \"account\": \"acc2\",\n        \"website\": \"www.org1.com\",\n        \"fuelReimbursementPolicy\": \"200\",\n        \"speedLimitPolicy\": \"300\",\n        \"parent\": null,\n        \"children\": [],\n        \"inheritedFuelReimbursementPolicy\": null,\n        \"inheritedSpeedLimitPolicy\": null,\n        \"vehicles\": [],\n        \"_id\": \"66b9fa69aad6509cb32c9eba\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Patch organization",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"account\": \"acc1\",\r\n    \"website\": \"www.org1.com\",\r\n    \"fuelReimbursementPolicy\": \"200\",\r\n    \"speedLimitPolicy\": \"300\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/orgs/:orgId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"orgs",
+								":orgId"
+							],
+							"variable": [
+								{
+									"key": "orgId",
+									"value": "66b9fa33641dcd66e01b0e08"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"account\": \"acc1\",\r\n    \"website\": \"www.org1.com\",\r\n    \"fuelReimbursementPolicy\": \"200\",\r\n    \"speedLimitPolicy\": \"300\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/orgs/:orgId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"orgs",
+										":orgId"
+									],
+									"variable": [
+										{
+											"key": "orgId",
+											"value": "66b9fa33641dcd66e01b0e08"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"136-oPUwtqosCDPE0+ZJyCnmI6Cvbcw\""
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 Aug 2024 14:11:55 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "310"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Org updated\",\n    \"success\": true,\n    \"data\": {\n        \"_id\": \"66b9fa33641dcd66e01b0e08\",\n        \"name\": \"org1\",\n        \"account\": \"acc1\",\n        \"website\": \"www.org1.com\",\n        \"fuelReimbursementPolicy\": \"200\",\n        \"speedLimitPolicy\": \"300\",\n        \"parent\": null,\n        \"children\": [],\n        \"inheritedFuelReimbursementPolicy\": null,\n        \"inheritedSpeedLimitPolicy\": null,\n        \"vehicles\": []\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get all organization",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/orgs?limit=5&page=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"orgs"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/orgs?limit=5&page=1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"orgs"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "5"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"240-vQDmK5uXeYbek5p62pY1d3BKnAo\""
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 Aug 2024 12:13:12 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "576"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Orgs fetched\",\n    \"success\": true,\n    \"data\": [\n        {\n            \"_id\": \"66b9fa33641dcd66e01b0e08\",\n            \"name\": \"org1\",\n            \"account\": \"acc1\",\n            \"website\": \"www.org1.com\",\n            \"fuelReimbursementPolicy\": \"200\",\n            \"speedLimitPolicy\": \"300\",\n            \"parent\": null,\n            \"children\": [],\n            \"inheritedFuelReimbursementPolicy\": null,\n            \"inheritedSpeedLimitPolicy\": null,\n            \"vehicles\": []\n        },\n        {\n            \"_id\": \"66b9fa69aad6509cb32c9eba\",\n            \"name\": \"org1\",\n            \"account\": \"acc2\",\n            \"website\": \"www.org1.com\",\n            \"fuelReimbursementPolicy\": \"200\",\n            \"speedLimitPolicy\": \"300\",\n            \"parent\": null,\n            \"children\": [],\n            \"inheritedFuelReimbursementPolicy\": null,\n            \"inheritedSpeedLimitPolicy\": null,\n            \"vehicles\": []\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get organization",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/orgs/:orgId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"orgs",
+								":orgId"
+							],
+							"variable": [
+								{
+									"key": "orgId",
+									"value": "66b9fa33641dcd66e01b0e08"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/orgs/:orgId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"orgs",
+										":orgId"
+									],
+									"variable": [
+										{
+											"key": "orgId",
+											"value": "66b9fa33641dcd66e01b0e08"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"136-494dd0QwY1XUXSkTQXlvZdYyKe8\""
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 Aug 2024 12:13:52 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "310"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Org fetched\",\n    \"success\": true,\n    \"data\": {\n        \"_id\": \"66b9fa33641dcd66e01b0e08\",\n        \"name\": \"org1\",\n        \"account\": \"acc1\",\n        \"website\": \"www.org1.com\",\n        \"fuelReimbursementPolicy\": \"200\",\n        \"speedLimitPolicy\": \"300\",\n        \"parent\": null,\n        \"children\": [],\n        \"inheritedFuelReimbursementPolicy\": null,\n        \"inheritedSpeedLimitPolicy\": null,\n        \"vehicles\": []\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8000",
+			"type": "string"
+		}
+	]
+}
